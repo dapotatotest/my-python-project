@@ -19,7 +19,7 @@ pipeline {
         stage('Pulish') {
             steps {
                 script {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_LOGIN --password-stdin'
+                    sh 'echo $DOCKER_PASSWORD_CHRISTIAN | docker login -u $DOCKER_LOGIN --password-stdin'
                     sh 'docker build -t grompa/my-python-app:$BUILD_NUMBER .'
                     sh 'docker push grompa/my-python-app:$BUILD_NUMBER'
                 }
