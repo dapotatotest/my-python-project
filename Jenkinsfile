@@ -1,8 +1,8 @@
 pipeline {
     agent any
     stages {
-        stage('Compilation & Tests') {
-            parallel {
+        //stage('Compilation & Tests') {
+        //    parallel {
                 stage('Flake8') {
                     steps {
                         script {
@@ -17,8 +17,8 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
+        //    }
+        //}
         stage('Pulish') {
             steps {
                 script {
