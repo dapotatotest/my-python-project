@@ -19,8 +19,8 @@ pipeline {
         stage('Pulish') {
             steps {
                 script {
+                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_LOGIN --password-stdin'
                     sh 'docker build -t alianib/my-python-app:$BUILD_NUMBER .'
-                    sh 'docker login -u $DOCKER_LOGIN -p $DOCKER_PASS'
                     sh 'docker push alianib/my-python-app:$BUILD_NUMBER'
                 }
             }
