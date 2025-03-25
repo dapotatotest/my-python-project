@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    python3 -m flake8 . --count --show-source --statistics || true
+                    sh 'python3 -m flake8 . --count --show-source --statistics || true'
                 }
             }
         }
